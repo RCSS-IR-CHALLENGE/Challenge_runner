@@ -1,5 +1,7 @@
 #!/bin/bash
 
+chmod +x *.sh
+
 echo Starting a major tournament...
 for(( i=1; i <= $(wc -l < Games.txt); i++)) do
     TEAM=$(sed -n "$i"p Games.txt)
@@ -22,9 +24,6 @@ for(( i=1; i <= $(wc -l < Games.txt); i++)) do
     cd Bins/$TEAMT && ./localStartAll &
     wait $server_pid
     sleep 1
-    python3 AnalyzeResult.py
-    sleep 1
-    cd ScBot && ./FgBot.sh && cd ..
     ./LogCompressor.sh
     ./ChangeLogDir.sh
     rm Mg
