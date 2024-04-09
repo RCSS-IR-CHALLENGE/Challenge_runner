@@ -15,7 +15,6 @@ for(( i=1; i <= $(wc -l < Games.txt); i++)) do
     echo $TEAM $VS $TEAMT > Mg
     python3 EditMoment.py
     rcssserver server::fullstate_l = true server::fullstate_r = true server::auto_mode = true server::synch_mode = false server::game_log_dir = `pwd` server::keepaway_log_dir = `pwd` server::text_log_dir = `pwd` server::nr_extra_halfs = 2 server::penalty_shoot_outs = true &
-    cd ../ScBot && ./Bot.sh && cd ../SummerCup2023-Tournament-Runner
     sleep 1
     server_pid=$!
     sleep 1
