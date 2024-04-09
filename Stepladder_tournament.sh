@@ -31,19 +31,8 @@ do
     ./LogCompressor.sh
     ./ChangeLogDir.sh
     rm *.rcg *.rcl *.rcg.tar.gz *.rcl.tar.gz
-
-
-    # Add "hi" to the beginning of Games.txt
-    #sed -i '1s/^/$winner\n/' Games.txt
-    # Assume 'winner' contains the value you want to write to the file
-
-# Create a temporary file with the value of 'winner' followed by a newline
     echo "$winner" > tmpfile
-
-# Append the contents of Games.txt to the temporary file
     cat Games.txt >> tmpfile
-
-# Overwrite Games.txt with the contents of the temporary file
     mv tmpfile Games.txt
     sleep 1
 done
