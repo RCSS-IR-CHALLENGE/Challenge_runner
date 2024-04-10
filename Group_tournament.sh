@@ -11,6 +11,8 @@ for(( i=1; i <= $(wc -l < Games.txt); i++)) do
     i=$((i+1))
     TEAMT=$(sed -n "$i"p Games.txt)
     python3 EditMoment.py
+    mv G.txt Games.txt
+    rm G.txt
     rcssserver server::fullstate_l = true server::fullstate_r = true server::auto_mode = true server::synch_mode = true server::game_log_dir = `pwd` server::keepaway_log_dir = `pwd` server::text_log_dir = `pwd` server::nr_extra_halfs = 0 server::penalty_shoot_outs = false &
     sleep 1
     server_pid=$!
